@@ -1,0 +1,37 @@
+# CLIENT
+client/node_modules
+client/build
+
+# dependencies
+client/node_modules
+client/.pnp
+client/.pnp.js
+
+# testing
+client/coverage
+
+# production
+client/build
+
+# misc
+client/.DS_Store
+client/.env.local
+client/.env.development.local
+client/.env.test.local
+client/.env.production.local
+
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+
+# SERVER
+server/node_modules
+server/build
+server/.env
+server/.env.dev
+server/.env.development
+server/.env.prod
+
+# EXTRA
+extra/payment_client/node_modules
+extra/payment_client/build

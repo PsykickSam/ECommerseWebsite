@@ -1,0 +1,135 @@
+### Variables
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYWMxZTBhMDhjMDU0YzdjNDU2ZDU2MCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzOTgzMjY4NSwiZXhwIjoxNjQwMDkxODg1fQ.Ax9pVmqy29oJKCEyopihPGah_ZVPI-if-QaY_vkqCHI
+
+### TEST
+GET http://localhost:5000/api/auth/test HTTP/1.1
+
+### AUTH - REGISTER
+POST http://localhost:5000/api/auth/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "email": "admin@mail.com",
+  "password": "123123"
+}
+
+### AUTH - LOGIN
+POST http://localhost:5000/api/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "123123"
+}
+
+### USER - UPDATE
+PUT http://localhost:5000/api/users/61ab6569f16b15184ec8b769 HTTP/1.1
+Content-Type: application/json
+token: {{token}}
+{
+  "username": "max"
+}
+
+### USER - FIND
+GET http://localhost:5000/api/users/find/61ab6569f16b15184ec8b769 HTTP/1.1
+Content-Type: application/json
+token: {{token}}
+
+### USERS
+GET http://localhost:5000/api/users?new=true HTTP/1.1
+Content-Type: application/json
+token: {{token}}
+
+### USERS
+GET http://localhost:5000/api/users HTTP/1.1
+Content-Type: application/json
+token: {{token}}
+
+### USER STATS
+GET http://localhost:5000/api/users/stats HTTP/1.1
+Content-Type: application/json
+token: {{token}}
+
+### PRODUCT NEW
+POST http://localhost:5000/api/products HTTP/1.1
+Content-Type: application/json
+token: {{token}}
+
+{
+  "title": "Puma Shirt",
+  "description": "T-Shirt",
+  "image": "image",
+  "categories": ["cloth", "shirt", "t-shirt"],
+  "size": "XL",
+  "color": "white",
+  "price": 2000
+}
+
+### PRODUCT UPDATE
+PUT http://localhost:5000/api/products/61b4a535e760b722efab3d90 HTTP/1.1
+Content-Type: application/json
+token: {{token}}
+
+{
+  "title": "Puma T-Shirt",
+  "description": "Puma brand mens t-shirt",
+  "image": "image",
+  "categories": ["cloth", "shirt", "t-shirt", "men"],
+  "size": "XL",
+  "color": "black",
+  "price": 3000
+}
+
+### PRODUCTS DELETE
+DELETE http://localhost:5000/api/products/61b4a535e760b722efab3d90 HTTP/1.1
+token: {{token}}
+
+### PRODUCTS FIND
+GET http://localhost:5000/api/products/find/61b4a0dcba86aac5501d0c65 HTTP/1.1
+token: {{token}}
+
+### PRODUCTS ALL
+GET http://localhost:5000/api/products HTTP/1.1
+token: {{token}}
+
+### PRODUCTS ALL - QUERY NEW
+GET http://localhost:5000/api/products?new=true HTTP/1.1
+token: {{token}}
+
+### PRODUCTS ALL - QUERY CATEGORY
+GET http://localhost:5000/api/products?category=exercise HTTP/1.1
+token: {{token}}
+
+### CART UPDATE
+PUT http://localhost:5000/api/cart/123 HTTP/1.1
+token: {{token}}
+
+### ORDER TEST
+GET http://localhost:5000/api/order/test HTTP/1.1
+token: {{token}}
+
+### ORDER ALL
+GET http://localhost:5000/api/order HTTP/1.1
+token: {{token}}
+
+### ORDER CREATE
+POST http://localhost:5000/api/order HTTP/1.1
+Content-Type: application/json
+token: {{token}}
+
+{
+  "userId": "61ab6569f16b15184ec8b769",
+  "products": [
+    {
+      "productId": "61bde9900c69888d19bf91f8",
+      "quantity": 2
+    }
+  ],
+  "amount": 1000,
+  "address": "BD"
+}
+
+### ORDER INCOME
+GET http://localhost:5000/api/order/income HTTP/1.1
+token: {{token}}
