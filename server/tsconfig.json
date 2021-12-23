@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "commonjs",
+    "outDir": "./build",
+    "rootDir": "./src",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noStrictGenericChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./src/app/",
+    "paths": {
+      "@api/*": ["api/*"],
+      "@error/*": ["error/*"],
+      "@log/*": ["log/*"],
+      "@models/*": ["models/*"],
+      "@routes/*": ["routes/*"],
+      "@module/*": ["module/*"],
+      "@middleware/*": ["middleware/*"],
+      "@helper/*": ["helper/*"]
+    }
+  }
+}

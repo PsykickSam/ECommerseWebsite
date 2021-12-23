@@ -1,0 +1,7 @@
+{
+  "commands": {
+    "build": {
+      "node-app": "docker build -t 'nodejs-server' ."
+    }
+  }
+}

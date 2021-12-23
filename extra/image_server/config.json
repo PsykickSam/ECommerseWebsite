@@ -1,0 +1,9 @@
+{
+  "path": {
+    "use": "resized",
+    "list": {
+      "original": "image/original/",
+      "resized": "image/resized/"
+    }
+  }
+}
