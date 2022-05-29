@@ -1,17 +1,5 @@
 import Mongoose from "mongoose"
 
-export interface Product {
-  productId: string,
-  quantity: number,
-  title: string,
-  description: string,
-  image: string,
-  categories: Array<string>,
-  size: string,
-  color: string,
-  price: number
-}
-
 const ProductSchema = new Mongoose.Schema(
   {
     title: { type: String, required: true, unique: true },

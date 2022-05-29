@@ -1,16 +1,5 @@
 import Mongoose from "mongoose"
 
-// MODELS
-import { Product } from "./Product"
-
-export interface Order {
-  userId: string,
-  products: Array<Product>,
-  amount: number,
-  address: object,
-  status: string
-}
-
 const OrderSchema = new Mongoose.Schema(
   {
     userId: { type: String, required: true, unique: true },

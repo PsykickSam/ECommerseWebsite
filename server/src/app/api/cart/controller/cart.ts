@@ -7,7 +7,8 @@ import CartModel from "@models/Cart"
 import Exception from "@error/index"
 
 // MIDDLEWARE
-import TokenVerify from "@middleware/TokenVerify"
+import TokenVerify from "@middleware/TokenVerifyMiddleware"
+import ModeVerify from "@middleware/ModeMiddleware"
 
 // HELPER
 import Refine from "@helper/Refine"
@@ -25,7 +26,7 @@ const router = Router()
 router.use("/test", TestRoute)
 
 // CREATE
-router.put("/", TokenVerify.VerifyTokenAuthorization, async (req: Request, res: Response) => {
+router.put("/", ModeVerify.CheckModeForTokenGate, TokenVerify.VerifyTokenAuthorization, async (req: Request, res: Response) => {
   const create = async () => {
     return await new CartModel(req.body).save()
   }

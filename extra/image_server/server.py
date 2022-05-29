@@ -28,4 +28,4 @@ def original_image(filename):
 
   return flask.send_file(filepath, mimetype='image/jpeg')
 
-app.run(threaded=True)
+app.run(port=config["port"], threaded=True)

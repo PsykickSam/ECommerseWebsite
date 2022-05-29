@@ -4,15 +4,13 @@
 	// Pages
 	import Payment from "./pages/Payment.svelte"
 	import Success from "./pages/Success.svelte"
-
-	export let url: string;
 </script>
 
 <main>
-	<Router basepath="/" url="{url}">
+	<Router basepath="/">
 		<div>
-			<Route path="/"><Payment /></Route>
-			<Route path="/success"><Success /></Route>
+			<Route path="/" component={Payment} />
+			<Route path="success" component={Success} />
 		</div>
 	</Router>
 </main>

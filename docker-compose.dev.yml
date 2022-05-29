@@ -17,10 +17,7 @@ services:
       - ./server/src:/app/src
       - ./server/tsconfig.json:/app/tsconfig.json
       - ./server/eslintrc.json:/app/eslintrc.json
-      - ./server/.env:/app/.env
-      - ./server/.env.dev:/app/.env.dev
-      - ./server/.env.development:/app/.env.development
-      - ./server/.env.prod:/app/.env.prod
+      - ./server/.env.dev:/app/.env
       - ./server/package.json:/app/package.json
     depends_on:
       - mongo

@@ -7,7 +7,7 @@ import ProductModel from "@models/Product"
 import Exception from "@error/index"
 
 // MIDDLEWARE
-import TokenVerify from "@middleware/TokenVerify"
+import TokenVerify from "@middleware/TokenVerifyMiddleware"
 
 // HELPER
 import Refine from "@helper/Refine"

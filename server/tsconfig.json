@@ -10,6 +10,7 @@
     "skipLibCheck": true,
     "noStrictGenericChecks": true,
     "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
     "baseUrl": "./src/app/",
     "paths": {
       "@api/*": ["api/*"],
@@ -19,7 +20,13 @@
       "@routes/*": ["routes/*"],
       "@module/*": ["module/*"],
       "@middleware/*": ["middleware/*"],
-      "@helper/*": ["helper/*"]
+      "@helper/*": ["helper/*"],
+      "@type/*": ["type/*"],
+      "@util/*": ["util/*"],
+      "@enum/*": ["enum/*"],
+      "@service/*": ["service/*"],
+      "@common/*": ["common/*"],
+      "@interface/*": ["interface/*"]
     }
   }
 }

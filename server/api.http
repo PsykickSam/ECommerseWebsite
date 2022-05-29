@@ -1,5 +1,5 @@
 ### Variables
-@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYWMxZTBhMDhjMDU0YzdjNDU2ZDU2MCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzOTgzMjY4NSwiZXhwIjoxNjQwMDkxODg1fQ.Ax9pVmqy29oJKCEyopihPGah_ZVPI-if-QaY_vkqCHI
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYWMxZTBhMDhjMDU0YzdjNDU2ZDU2MCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0NDA1MzkwMCwiZXhwIjoxNjQ0OTE3OTAwfQ.visFABx2sOejU5XHFPuYr07w7syVoJAw-7KjfmDuqnQ
 
 ### TEST
 GET http://localhost:5000/api/auth/test HTTP/1.1
@@ -9,8 +9,8 @@ POST http://localhost:5000/api/auth/register HTTP/1.1
 Content-Type: application/json
 
 {
-  "username": "admin",
-  "email": "admin@mail.com",
+  "username": "okubu",
+  "email": "okubu@mail.com",
   "password": "123123"
 }
 
@@ -27,6 +27,7 @@ Content-Type: application/json
 PUT http://localhost:5000/api/users/61ab6569f16b15184ec8b769 HTTP/1.1
 Content-Type: application/json
 token: {{token}}
+
 {
   "username": "max"
 }

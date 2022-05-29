@@ -1,7 +1,24 @@
-import { Request, Response, NextFunction } from "express"
 import jwt from "jsonwebtoken"
 
+import { Request, Response, NextFunction } from "express"
+
+// Util
+import Util from "@util/util"
+
+const skip = (req: Request, next: NextFunction): boolean => {
+  if (Util.skipForDebugMode(req.mode)) {
+    req.user = Util.debugUser(req.mode)
+
+    next()
+    return true
+  }
+
+  return false
+}
+
 const VerifyToken = (req: Request, res: Response, next: NextFunction) => {
+  if (skip(req, next)) return
+
   const token = Array.isArray(req.headers.token) ? req.headers.token[0] : req.headers.token
 
   if (token) {
@@ -20,8 +37,10 @@ const VerifyToken = (req: Request, res: Response, next: NextFunction) => {
 }
 
 const VerifyTokenAuthorization = (req: Request, res: Response, next: NextFunction) => {
+  if (skip(req, next)) return
+
   VerifyToken(req, res, () => {
-    if (req.user.id === req.params.id || req.user.isAdmin) {
+    if (req.user && (req.user.id === req.params.id || req.user.isAdmin)) {
       next()
       return
     }
@@ -31,8 +50,10 @@ const VerifyTokenAuthorization = (req: Request, res: Response, next: NextFunctio
 }
 
 const VerifyTokenAdmin = (req: Request, res: Response, next: NextFunction) => {
+  if (skip(req, next)) return
+
   VerifyToken(req, res, () => {
-    if (req.user.isAdmin) {
+    if (req.user && req.user.isAdmin) {
       next()
       return
     }
