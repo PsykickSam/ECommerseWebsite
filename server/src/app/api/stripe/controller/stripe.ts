@@ -30,7 +30,7 @@ router.post("/payment", (req, res) => {
       source: req.body.tokenId,
       amount: req.body.amount,
       currency: "usd"
-    }, {}).then(() => {
+    }).then((paymentIntent: Stripe.Charge) => {
       res.status(200).json()
     }).catch((err) => {
       res.status(500).json({ message: String(err) })
@@ -39,3 +39,29 @@ router.post("/payment", (req, res) => {
 
   const result = Exception.Handler.Sync(payment)
 })
+
+//
+router.get("/client/secret", async (req, res) => {
+  const secret = async () => {
+    const stripe = new Stripe(process.env.STRIPE_KEY || "", {
+      apiVersion: "2020-08-27"
+    })
+
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: 3000,
+      currency: "usd",
+      automatic_payment_methods: {
+        enabled: true
+      }
+    })
+
+    return paymentIntent.client_secret
+  }
+
+  const result = await Exception.Handler.Async(secret)
+  if (!result) res.status(500).json({ message: "Internal error occurred white retrieving the client secret" })
+
+  return res.status(200).json({ secret: result })
+})
+
+export default router

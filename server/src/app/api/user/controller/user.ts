@@ -7,7 +7,7 @@ import UserModel from "@models/User"
 import Exception from "@error/index"
 
 // MIDDLEWARE
-import TokenVerify from "@middleware/TokenVerify"
+import TokenVerify from "@middleware/TokenVerifyMiddleware"
 
 // HELPER
 import Validator from "@helper/Validator"
