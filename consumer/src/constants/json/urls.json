@@ -1,0 +1,14 @@
+{
+  "api": {
+    "register": "auth/register",
+    "login": "auth/login"
+  },
+  "web": {
+    "root": "/",
+    "login": "/login",
+    "register": "/register",
+    "cart": "/cart",
+    "product__id": "/product/:id",
+    "products__category": "/products/:category"
+  }
+}

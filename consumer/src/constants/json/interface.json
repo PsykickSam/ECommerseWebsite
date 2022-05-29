@@ -1,0 +1,10 @@
+{
+  "instance": {
+    "IRegisterResponse": "IRegisterResponse",
+    "IRegisterRequest": "IRegisterRequest",
+    "ILoginResponse": "ILoginResponse",
+    "ILoginRequest": "ILoginRequest",
+    "ILoginProps": "ILoginProps",
+    "none": "none"
+  }
+}

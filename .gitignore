@@ -1,27 +1,27 @@
 # CLIENT
-client/node_modules
-client/build
+consumer/node_modules
+consumer/build
 
 # dependencies
-client/.pnp
-client/.pnp.js
+consumer/.pnp
+consumer/.pnp.js
 
 # testing
-client/coverage
+consumer/coverage
 
 # production
-client/build
+consumer/build
 
 # misc
-client/.DS_Store
-client/.env.local
-client/.env.development.local
-client/.env.test.local
-client/.env.production.local
+consumer/.DS_Store
+consumer/.env.local
+consumer/.env.development.local
+consumer/.env.test.local
+consumer/.env.production.local
 
-client/npm-debug.log*
-client/yarn-debug.log*
-client/yarn-error.log*
+consumer/npm-debug.log*
+consumer/yarn-debug.log*
+consumer/yarn-error.log*
 
 # SERVER
 server/node_modules

@@ -1,0 +1,33 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest"
+    },
+    "plugins": [
+        "import",
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "quotes": ["error", "single"],
+        "linebreak-style": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "@typescript-eslint/no-unused-vars": [2, { "args": "none" }],
+        "import/prefer-default-export": "error",
+        "import/no-default-export": "off",
+        "import/no-unresolved": 0,
+        "no-underscore-dangle": ["error", { "allow": ["__typename"] }],
+        "import/extensions": "off",
+        "eol-last": "error",
+        "semi": ["error", "always"]
+    }
+}
